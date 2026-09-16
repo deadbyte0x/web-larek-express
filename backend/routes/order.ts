@@ -1,8 +1,9 @@
-import {Router} from 'express'
-import { postOrder } from '../controllers/order'
+import { Router } from 'express';
+import { postOrder } from '../controllers/order';
+import { orderRouteValidator } from '../middlewares/validations';
 
-const router = Router()
+const router = Router();
 
-router.post('/', postOrder)
+router.post('/', orderRouteValidator, postOrder);
 
-export default router
+export default router;
