@@ -9,7 +9,7 @@ export const getProducts = async (req: Request, res: Response, next: NextFunctio
     const products = await Product.find({})
     res.send({items: products, total: products.length})
     } catch(error) {
-        next(error)
+       return next(error)
     }
 }
 
@@ -27,6 +27,6 @@ export const postProducts = async (req: Request, res:Response, next: NextFunctio
             return next(new BadRequestError(error.message))
         }
 
-        next(error)
+       return next(error)
     }
 }

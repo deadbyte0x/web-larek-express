@@ -6,7 +6,7 @@ export const notFound = (
     res: Response,
     next: NextFunction
 ) => {
-    next(new NotFoundError('Маршрут не найден'))
+   return next(new NotFoundError('Маршрут не найден'))
 }
 
 export default notFound

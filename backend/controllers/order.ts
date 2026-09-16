@@ -103,6 +103,6 @@ export const postOrder = async (
             total: calculatedTotal
         })
     } catch (error) {
-        next(error)
+       return next(error)
     }
 }
